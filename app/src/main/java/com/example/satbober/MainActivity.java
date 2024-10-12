@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
     String ok(int x) {
         String str = " раз";
-        if(x%10>1 & x%10<5 | (x%100<12 | x%100>14)){
+        if(x%10>1 & x%10<5 & x/10%10!=1){
             str = " раза";
         }
         return str;
