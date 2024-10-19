@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
     int counter = 0;
     TextView textCounter;
+    TextView textTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +26,20 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         textCounter = findViewById(R.id.text2);
+        textTitle = findViewById(R.id.text1);
     }
 
     public void tapBober(View view) {
         counter += 1;
         textCounter.setText("Потрогали " + counter + " раз");
+        if(counter == 10){
+            textTitle.setText("Молодец, тапай, не останавливайся");
+        } else if(counter == 20){
+            textTitle.setText("Ты герой, продолжай!");
+        } else if(counter == 30){
+            textTitle.setText("Вау, как круто!");
+        } else{
+            textTitle.setText("Потапай бобра!");
+        }
     }
 }
