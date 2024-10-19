@@ -31,8 +31,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void tapBober(View view) {
         counter += 1;
+        /*if(counter%10>1 && counter%10<5 && counter/10%10!=1) {
+            textCounter.setText("Потрогали " + counter + " раза");
+        } else {
+            textCounter.setText("Потрогали " + counter + " раз");
+        }*/
 
-        textCounter.setText("Потрогали " + counter + " раз");
+        textCounter.setText("Потрогали " + counter + (counter%10>1 && counter%10<5 && counter/10%10!=1?" раза":" раз"));
+
         switch (counter){
             case 10: textTitle.setText("Молодец, тапай, не останавливайся"); break;
             case 20: case 21:
